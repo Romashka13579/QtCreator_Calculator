@@ -17,6 +17,9 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->Button_7,SIGNAL(clicked()),this,SLOT(digit()));
     connect(ui->Button_8,SIGNAL(clicked()),this,SLOT(digit()));
     connect(ui->Button_9,SIGNAL(clicked()),this,SLOT(digit()));
+    connect(ui->Button_dot,SIGNAL(clicked()),this,SLOT(dot()));
+
+    connect(ui->Button_pm,SIGNAL(clicked()),this,SLOT(functions()));
 }
 
 MainWindow::~MainWindow()
@@ -34,4 +37,10 @@ void MainWindow::digit()
     ui->label->setText(new_label);
 }
 
+void MainWindow::dot()
+{
+    if(ui->label->text().contains(".") != true){
+        ui->label->setText(ui->label->text()+".");
+    }
+}
 
