@@ -17,8 +17,6 @@ public:
 
 private slots:
    void digit();
-   void dot();
-   void functions();
 
 private:
     Ui::MainWindow *ui;
