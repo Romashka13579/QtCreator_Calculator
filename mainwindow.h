@@ -14,12 +14,10 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
 private slots:
    void digit();
    void dot();
    void functions();
-
 private:
     Ui::MainWindow *ui;
 };

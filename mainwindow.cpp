@@ -20,6 +20,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->Button_dot,SIGNAL(clicked()),this,SLOT(dot()));
 
     connect(ui->Button_pm,SIGNAL(clicked()),this,SLOT(functions()));
+    connect(ui->Button_percent,SIGNAL(clicked()),this,SLOT(functions()));
 }
 
 MainWindow::~MainWindow()
@@ -51,15 +52,16 @@ void MainWindow::functions()
     QString new_label;
     if(button->text() == "+/-")
     {
-        all_numbers = (ui->label->text() + button->text()).toDouble();
+        all_numbers = (ui->label->text()).toDouble();
         all_numbers *= -1;
         new_label = QString::number(all_numbers, 'g', 16);
         ui->label->setText(new_label);
     }
     else if(button->text() == "%"){
-        all_numbers = (ui->label->text() + button->text()).toDouble();
-        all_numbers *= -1;
+        all_numbers = (ui->label->text()).toDouble();
+        all_numbers *= 0.1;
         new_label = QString::number(all_numbers, 'g', 16);
         ui->label->setText(new_label);
     }
 }
+
