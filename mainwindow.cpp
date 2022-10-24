@@ -56,7 +56,7 @@ void MainWindow::functions()
         new_label = QString::number(all_numbers, 'g', 16);
         ui->label->setText(new_label);
     }
-    else{
+    else if(button->text() == "%"){
         all_numbers = (ui->label->text() + button->text()).toDouble();
         all_numbers *= -1;
         new_label = QString::number(all_numbers, 'g', 16);
